@@ -110,10 +110,10 @@ h2. Forcing Cohorts
 It's useful when testing to force yourself into a particular cohort. You can specify a cohort via URL encoded params in a hash, like so:
 
 <pre><code>
-http://www.example.com/page.html#test1=cohort_foo&test2=cohort_bar
+http://www.example.com/page.html#test1=header:big,footer:small
 </code></pre>
 
-This would force @test1@ to be in @cohort_foo@ and @test2@ to be in @cohort_bar@. 
+This would force @test1@ to be in the cohort @header:big,footer:small@.  When a test is forced into a particular cohort, the @getCohort()@ method has ",forced" appended to it, so that the analytics can distinguish between  real cohort data and testing.  In this case @getCohort()@ would return @header:big,footer:small,forced@
 
 h2. Details and Notes
 
